@@ -1,0 +1,19 @@
+Create a modularized app for weapons, characters, and the game world.
+
+Weapons:
+- Each needs an id
+- Keep a list of all weapons
+- Keep track of number of weapons created
+- Attributes: name, weight, type, id, damage
+
+Characters:
+- Attributes: name, gender, health, carrying_weight, 
+- Methods: acquire_weapon, attack
+
+Create players and weapons in the game using Python OOP. Have them fight!
+
+World Building:
+- Create and use healing elixir
+- Cause weapon damage to be determined by characteristic...
+- Create guilds
+- Create classes using data dictionary
