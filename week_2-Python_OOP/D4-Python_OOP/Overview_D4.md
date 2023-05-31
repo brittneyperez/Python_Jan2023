@@ -1,11 +1,8 @@
-## ２０２３年０５月２９日（月）
+## **Week 2 - D4** | ２０２３年０１月１７日（火）
 
-## Week 2
-
-### Recap
-
-## Topics to Cover
+### Overview
 There is a much concise method to making objects. Instead of writing the same, redundant pieces of information:
+
 ```py
 # Using a dictionary to save user to DB
 user_one = {
@@ -16,7 +13,8 @@ user_one = {
 }
 ```
 
-We can use Python OOP to make DRY code and resuse the layout of our data using classes.
+We can use Python OOP to make DRY code and reuse the layout of our data using classes.
+
 ```py
 # Using class containing a constructor and its attributes
 class User:
@@ -29,3 +27,26 @@ class User:
 
 jane_doe = User('Jane', 'Doe', 19990428)
 ```
+
+## Topics to Cover
+- Intro to Python OOP
+    - DRY
+    - Classes vs Instance
+        - Class Student vs (actual) Instance of student
+        - **`self`** : similar to `this` in JavaScript
+    - **Classes**
+        - Naming conventions, upercase singular
+        - Defining a Class
+    - **Instances**
+        - Create an **Instance** of a Class
+    - **Attributes** : similar to variables/keys
+        - Class attributes
+        - Instance attributes
+    - **Methods**
+        - Class
+        - Instance
+        - Static
+    - Chaining Methods
+        - return `self`
+            - _But why?_
+    - Class constructor with data dictionary
