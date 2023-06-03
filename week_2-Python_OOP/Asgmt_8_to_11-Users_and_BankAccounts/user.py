@@ -30,6 +30,7 @@ class User:
         if self.is_rewards_member:
             print('This user is already a member.')
             return False
+        # * UPDATE: In Chaning Methods Assignment, this boolean is unecessary since the logic is already checking if the user is already a member and it needs to remain an object to be able to chain to other methods. See file for changes.
         else:
             self.is_rewards_member = True
             self.gold_card_points = 200
@@ -50,6 +51,8 @@ class User:
         else:
             self.gold_card_points -= amount_spent
             print(f'Thank you, {self.first_name}. You\'ve spent {amount_spent} gold card points.')
+        
+        # * UPDATE: In Chaning Methods Assignment, the logic for spend_points() has been changed to a better logic. See file for changes.
 
 
 """ CODE TESTING """
