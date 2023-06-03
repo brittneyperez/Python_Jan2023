@@ -15,7 +15,7 @@ class State:
         for entry in db.states:
             if entry['id'] == id:
                 print(cls(entry))
-                return(cls(entry))
+                return(cls(entry)) # return the object of the state <state.State object at location_digits>
 
 # * Code Testing...
-State.get_state_by_id(2)
+# State.get_state_by_id(2)
