@@ -1,0 +1,61 @@
+-- Learning SQL Queries with Twitter Database
+
+-- Let's see what's in each table:
+SELECT * FROM users;
+SELECT * FROM faves;
+SELECT * FROM follows;
+SELECT * FROM tweets;
+
+-- SELECT Basics
+SELECT * FROM users;
+SELECT first_name, last_name FROM users;
+
+-- SELECT w/ Conditionals
+SELECT * FROM users WHERE id >= 3;
+SELECT * FROM users WHERE id=1 OR id=2 ORDER BY birthday DESC; -- recent yr to former yrs
+
+-- Get the last names of users with id of 2 or 3
+SELECT last_name FROM users WHERE id = 2 OR id = 3;
+-- Get all users with id above 2
+SELECT * FROM users WHERE id > 2;
+-- Get all users with first names ending in "e"
+SELECT * FROM users WHERE first_name LIKE "%e";
+-- Get all users with first names starting with "K"
+SELECT * FROM users WHERE first_name LIKE "K%";
+-- Get all users with first names NOT starting with "K"
+SELECT * FROM users WHERE first_name NOT LIKE "K%";
+
+-- SELECT w/ Sorting
+-- Get all of the youngest users at the top of the table
+SELECT * FROM users ORDER BY birthday DESC;
+-- Get all of the oldest users at the top of the table
+SELECT * FROM users ORDER BY birthday ASC;
+-- Get all users with the first name that ends with "e" and with the youngest users at the top of the table
+SELECT * FROM users WHERE first_name LIKE "%e" ORDER BY birthday DESC;
+-- Get only the first names of all users in alphabetical order
+SELECT first_name FROM users ORDER BY first_name;
+
+-- SELECT w/ LIMIT and OFFSET
+-- Get the first 3 users
+SELECT * FROM users LIMIT 3;
+-- Get user records 3-5
+SELECT * FROM users LIMIT 3 OFFSET 2;
+-- Combine LIMIT & OFFSET (provides the same result as before)
+SELECT * FROM users LIMIT 2,3;
+
+
+-- INSERTING --
+-- INSERT INTO users (first_name, last_name, handle, birthday) VALUES ("Jane", "Doe", "janedoe", "1999-03-23");
+INSERT INTO tweets (tweet, user_id, created_at, updated_at) VALUES ("Hello World!", 6, NOW(), NOW());
+INSERT INTO users (first_name, last_name, handle, birthday, created_at, updated_at) VALUES ("Delete", "Test", "delete_test", "2000-01-01", NOW(), NOW());
+INSERT INTO tweets (tweet, user_id, created_at, updated_at) VALUES ("DELETE Everything!", 7, NOW(), NOW());
+
+
+-- UPDATE --
+UPDATE users SET created_at=NOW(), updated_at=NOW() WHERE id=6;
+
+
+-- DELETE --
+SET SQL_SAFE_UPDATES = 0;
+DELETE FROM users WHERE id=7;
+DELETE FROM tweets WHERE id=14;

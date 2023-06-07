@@ -1,0 +1,13 @@
+-- CREATE
+INSERT INTO names (name) VALUES ("Brittney");
+INSERT INTO names ( name ) VALUES ("Bri"), ("Minnie the Cat");
+
+-- READ
+SELECT * FROM names;
+
+-- UPDATE
+UPDATE names SET name="Minnie" WHERE id=3;
+SELECT * FROM names;
+
+-- DELETE
+DELETE FROM names WHERE id=2;
